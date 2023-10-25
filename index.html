@@ -3,38 +3,34 @@
 <head>
 	<title>TCUMC</title>
 	<style type="text/css">
+		html,body{margin:0;padding:0;}
 		body {
-			background-image: url("minecraft.png");
+			background-image: url("minecraft.png"); 
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-position: bottom;
+			background-color: #323a3a;
+			height: 330px;
 			font-family: Arial, sans-serif;
+			vertical-align: bottom;
 		}
 		h1 {
 			font-size: 48px;
 			color: rgb(0, 0, 0);
 			text-align: center;
 			margin-top: 100px;
-			/* text-shadow: 2px 2px #000000; */
 		}
 		h2 {
-			font-size: 48px;
-			color: black;
-			text-align: center;
-			margin-top: auto;
-		}
-		h3 {
 			font-size: 36px;
 			color: black;
 			text-align: center;
-			margin-top: auto;
+			margin-top: 0px;	
 		}
 		img {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 50px;
-			border-radius: 50%;
-			box-shadow: 5px 5px 5px #888888;
+			margin-top: 20px;
 		}
         .menu-bar {
             background-color: #333333;
@@ -42,6 +38,7 @@
             position: fixed; 
             top: 0; 
             width: 110%; 
+			z-index: 100;
         }
         .menu-bar a {
             float: left;
@@ -59,35 +56,102 @@
             background-color: #5baace;
             color: white;
         }
-		.news {
-            width: 80%;
-			margin: 20px auto;
-			background-color: rgb(117, 231, 252);
-			padding: 10px;
-        }
-        .news h2 {
-			color: rgb(0, 0, 0);
+		.header{
+			text-align: center;
 		}
-        .news p {
-			color: black;
+        .head-border {
+            position: relative;
+            display: inline-block;
+			padding: 0 290px;
         }
+        .head-border:before,
+        .head-border:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            width: 275px;
+            height: 3px;
+            background-color: black;
+        }
+ 
+        .head-border:before {
+            left: 0;
+        }
+ 
+        .head-border:after {
+            right: 0;
+        }
+        .main{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: -5px;
+            
+        }
+        .main a:link{
+            color: rgb(0, 217, 255);
+            text-decoration: none;
+        }
+        .main a:visited {
+            color: rgb(0, 217, 255);
+        }
+        .main h1{
+            color: white;
+            font-size: 32px;
+        }
+		.main h2{
+			color: white;
+			font-size: 16px;
+		}
+        .wrapper{
+            min-height: 100vh;
+            position: relative;
+        }
+		.ftr{ /*ふったー*/
+            width: 100% auto;
+			background-color: #333333;
+			color: white;
+			text-align: center;
+            height: 90px;
+            padding: 10px;
+            position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+		}
 	</style>
 </head>
-<body>
-    <div class="menu-bar">
+<header>
+	<div class="menu-bar">
       <a class="active" href="home.html">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
       <a href="https://discord.gg/mwq8ZHMWA8" target="_blank">Discord</a>
     </div>
-	<h1>─────────TCUMC─────────</h1>
-	<h3>東京都市大学Minecraftコミュニティ</h3>
-    <h2>───────────────────────</h2>
-	<div class="news">
-		<h2>ニュース</h2>
-		<p>1. サーバーのアップデートについて</p>
-		<p>2. イベントのお知らせ</p>
-		<p>3. ルールの変更について</p>
+	</header>
+<body>
+
+	<div class="header">
+	  <h1 class="head-border">TCUMC</h1>
+	  <h2>都市大生Minecraftコミュニティサーバー</h2>
+	  <hr width="750px" size="3" color="black" noshade="">
 	</div>
+
 </body>
 </html>
+    <div class="main">
+		<h1>TCUMCとは</h1>
+		<h2>TCUMCは東京都市大学生Minecrafter達の交流を目的としたコミュニティサーバーです。<br>2023年5月より始動し、70人以上の都市大生が参加しています。<br>現在、サバイバルサーバーとクリエイティブサーバーが24時間稼働しています。<br></h2>
+        <h1>参加するには</h1>
+        <h2>都市大生であれば誰でも参加することができます。<br>詳しい方法は<a href="https://discord.gg/mwq8ZHMWA8" target="_blank">Discord</a>で掲載していますので、まずはご参加ください。</h2>
+    </div>
+<footer>
+    <div class="ftr">
+        <p> </p>
+	    <a href="https://x.com/TCU_MC" target="_blank">
+            <img src="xlogo.svg" alt="X(Twitter)"width="32" height="32">
+        </a>
+	    <p>&copy; 2023 TCUMC</p>
+    </div> 
+
+  </footer>
