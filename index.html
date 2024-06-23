@@ -73,22 +73,44 @@
         }
 
         .hero-title {
-            font-size: 48px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px 30px;
-            border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            display: flex;
+            font-size: 80px; /* デスクトップ用のサイズを縮小 */
+            font-weight: bold;
+            justify-content: center; /* 中央揃え */
         }
 
-        .hero-title:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        .letter {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: var(--delay);
+            width: 70px;
+            height: 70px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 -5px; 
+            color: rgb(91, 170, 206);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: -0.05em; 
         }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+            }
+            
+            .letter {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY( 0); }
+        }
+
+
 
         .content {
             padding: 40px 0;
@@ -221,8 +243,8 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Wiki</a></li>
-                        <li><a href="#">Discord</a></li>
+                        <li><a href="https://wiki.tcumc.net" target="_blank">Wiki</a></li>
+                        <li><a href="https://discord.gg/mwq8ZHMWA8" target="_blank">Discord</a></li>
                     </ul>
                 </nav>
             </div>
@@ -230,14 +252,20 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1 class="hero-title">TCUMC</h1>
-        </section>
+        <div class="hero">
+            <h1 class="hero-title">
+              <span class="letter" style="--delay: 0s;">T</span>
+              <span class="letter" style="--delay: 0.05s;">C</span>
+              <span class="letter" style="--delay: 0.1s;">U</span>
+              <span class="letter" style="--delay: 0.15s;">M</span>
+              <span class="letter" style="--delay: 0.2s;">C</span>
+            </h1>
+        </div>
         <section class="content">
             <div class="container">
                 <h2>TCUMCとは</h2>
                 <p>TCUMCは東京都市大学生Minecrafter達の交流を目的としたコミュニティサーバーです。
-                2023年5月より始動し、80人以上の都市大生が参加しています。
+                2023年5月より始動し、90人以上の都市大生が参加しています。
                 現在、サバイバルサーバーとクリエイティブサーバーが24時間稼働しています。</p>
             </div>
         </section>
@@ -264,7 +292,7 @@
                     
                     <div class="feature-card">
                         <h2>1.21サバイバル</h2>
-                        <p>メインサバイバルとは別に、最新バージョンのサーバーが公開バニラで新要素を体験できます。</p>
+                        <p>メインサバイバルとは別に、最新バージョンのサーバーが公開。バニラで新要素を体験できます。</p>
                         <img src="src/121.jpg" alt="1.21サバイバル">
                     </div>
                 </div>
@@ -272,14 +300,14 @@
         </section>
         <section class="cta">
             <div class="container">
-                <a href="#" class="btn">Join Minecraft</a>
+                <a href="https://discord.gg/mwq8ZHMWA8" target="_blank" class="btn">Discordに参加</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <a href="https://twitter.com/TCUMC" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/TCU_MC" target="_blank" rel="noopener noreferrer">
                 <img src="src/xlogo.svg" alt="X (Twitter) Logo" class="x-logo">
             </a>
             <p>&copy; 2023-2024 TCUMC</p>
