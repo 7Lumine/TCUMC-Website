@@ -1,156 +1,302 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-	<title>TCUMC</title>
-	<style type="text/css">
-		html,body{margin:0;padding:0;}
-		body {
-			background-image: url("minecraft.png"); 
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: bottom;
-			background-color: #323a3a;
-			height: 330px;
-			font-family: Arial, sans-serif;
-			vertical-align: bottom;
-		}
-		h1 {
-			font-size: 48px;
-			color: rgb(0, 0, 0);
-			text-align: center;
-			margin-top: 100px;
-		}
-		h2 {
-			font-size: 36px;
-			color: black;
-			text-align: center;
-			margin-top: 0px;	
-		}
-		img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 20px;
-		}
-        .menu-bar {
-            background-color: #333333;
-            overflow: hidden;
-            position: fixed; 
-            top: 0; 
-            width: 110%; 
-			z-index: 100;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCUMC - Minecraft Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .menu-bar a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
         }
-        .menu-bar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .menu-bar a.active {
-            background-color: #5baace;
-            color: white;
-        }
-		.header{
-			text-align: center;
-		}
-        .head-border {
-            position: relative;
-            display: inline-block;
-			padding: 0 290px;
-        }
-        .head-border:before,
-        .head-border:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            display: inline-block;
-            width: 275px;
-            height: 3px;
-            background-color: black;
-        }
- 
-        .head-border:before {
-            left: 0;
-        }
- 
-        .head-border:after {
-            right: 0;
-        }
-        .main{
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: -5px;
-            
+            padding: 0 20px;
         }
-        .main a:link{
-            color: rgb(0, 217, 255);
+
+        header {
+            background-color: #000014;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #fff;
             text-decoration: none;
+            font-weight: 700;
         }
-        .main a:visited {
-            color: rgb(0, 217, 255);
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
         }
-        .main h1{
-            color: white;
-            font-size: 32px;
+
+        nav ul li {
+            margin-left: 20px;
         }
-		.main h2{
-			color: white;
-			font-size: 16px;
-		}
-        .wrapper{
-            min-height: 100vh;
-            position: relative;
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-	.ftr{ /*ふったー*/
-            width: 100% auto;
-			background-color: #333333;
-			color: white;
-			text-align: center;
-            height: 90px;
-            padding: 10px;
-            position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-		}
-	</style>
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            background-image: url('src/hero2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .hero-title:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .content {
+            padding: 40px 0;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            padding: 40px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #FFC107;
+        }
+
+        footer {
+            background-color: #000014;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .x-logo {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            .hero {
+                height: 200px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<header>
-	<div class="menu-bar">
-      <a class="active" href="index.html">Home</a>
-      <a href="https://wiki.tcumc.net" target="_blank">Wiki</a>
-      <a href="https://discord.gg/mwq8ZHMWA8" target="_blank">Discord</a>
-    </div>
-	</header>
 <body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">TCUMC</a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Wiki</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-	<div class="header">
-	  <h1 class="head-border">TCUMC</h1>
-	  <h2>都市大生Minecraftコミュニティサーバー</h2>
-	  <hr width="750px" size="3" color="black" noshade="">
-	</div>
+    <main>
+        <section class="hero">
+            <h1 class="hero-title">TCUMC</h1>
+        </section>
+        <section class="content">
+            <div class="container">
+                <h2>TCUMCとは</h2>
+                <p>TCUMCは東京都市大学生Minecrafter達の交流を目的としたコミュニティサーバーです。
+                2023年5月より始動し、80人以上の都市大生が参加しています。
+                現在、サバイバルサーバーとクリエイティブサーバーが24時間稼働しています。</p>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container">
+                <h2>参加するには</h2>
+                <p>都市大生であれば誰でも参加することができます。詳しい方法はDiscordで掲載していますので、まずはご参加ください。</p>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h2>サバイバル</h2>
+                        <p>プレイヤー間の取引を可能にする経済プラグインやスキル、レベリング要素を追加しています。</p>
+                        <img src="src/suirvival.jpg" alt="サバイバルモード">
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h2>クリエイティブ</h2>
+                        <p>過去のサバイバルマップで自由に建築ができます。WorldEditが使用可能です。</p>
+                        <img src="src/creative.jpg" alt="クリエイティブモード">
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h2>1.21サバイバル</h2>
+                        <p>メインサバイバルとは別に、最新バージョンのサーバーが公開バニラで新要素を体験できます。</p>
+                        <img src="src/121.jpg" alt="1.21サバイバル">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <div class="container">
+                <a href="#" class="btn">Join Minecraft</a>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <div class="container">
+            <a href="https://twitter.com/TCUMC" target="_blank" rel="noopener noreferrer">
+                <img src="src/xlogo.svg" alt="X (Twitter) Logo" class="x-logo">
+            </a>
+            <p>&copy; 2023-2024 TCUMC</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-    <div class="main">
-		<h1>TCUMCとは</h1>
-		<h2>TCUMCは東京都市大学生Minecrafter達の交流を目的としたコミュニティサーバーです。<br>2023年5月より始動し、80人以上の都市大生が参加しています。<br>現在、サバイバルサーバーとクリエイティブサーバーが24時間稼働しています。<br></h2>
-        <h1>参加するには</h1>
-        <h2>都市大生であれば誰でも参加することができます。<br>詳しい方法は<a href="https://discord.gg/mwq8ZHMWA8" target="_blank">Discord</a>で掲載していますので、まずはご参加ください。</h2>
-    </div>
-<footer>
-    <div class="ftr">
-        <p> </p>
-	    <a href="https://x.com/TCU_MC" target="_blank">
-            <img src="xlogo.svg" alt="X(Twitter)"width="32" height="32">
-        </a>
-	    <p>&copy; 2023-2024 TCUMC</p>
-    </div> 
-
-  </footer>
