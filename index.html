@@ -74,9 +74,9 @@
 
         .hero-title {
             display: flex;
-            font-size: 80px; /* デスクトップ用のサイズを縮小 */
+            font-size: 80px; 
             font-weight: bold;
-            justify-content: center; /* 中央揃え */
+            justify-content: center; 
         }
 
         .letter {
@@ -319,7 +319,9 @@
             const navLinks = document.querySelectorAll('nav ul li a');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault();
+                    if (link.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
                     navLinks.forEach(l => l.classList.remove('active'));
                     link.classList.add('active');
                 });
